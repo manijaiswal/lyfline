@@ -158,12 +158,12 @@ label span{
   }
 
   .ng-invalid {
-    border-color: red;
-    outline-color: red;
+    border-color: red !important;
+    outline-color: red !important;
   }
   .ng-valid {
-    border-color: green;
-    outline-color: green;
+    border-color: green !important;
+    outline-color: green !important;
   }
 
 

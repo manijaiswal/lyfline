@@ -322,3 +322,6 @@
 [2018-10-08T00:05:04.327] [INFO] DataBase - { r: 'mongodb',
   msg: 'Database_successfully_connected',
   body: 'success' }
+[2018-10-08T00:36:38.574] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
