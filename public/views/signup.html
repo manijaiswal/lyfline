@@ -1,0 +1,96 @@
+<div class="banner">
+    <div class="container" ng-disabled="bg_disable">
+        <div id="cover" ng-show="bg_disable"></div>
+        <div class="row" style="padding-top:8%">
+            <div class="loader" ng-if="loaded==false"></div>
+            <div class="col-md-8 offset-md-2">
+                <div class="jumbotron" style="background:#fff">
+                    <h3>Sign Up</h3>
+                    <fieldset class="title">
+                        <legend>Details</legend>
+                    </fieldset>
+                    <form name="form" class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label> Name
+                                <span>*</span>
+                            </label>
+                            <input type="text" class="form-control" ng-model="vm.sign_form['name']" placeholder="Enter Your name" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label> Email
+                                <span>*</span>
+                            </label>
+                            <input type="email" class="form-control" ng-model="vm.sign_form['email']" placeholder="Enter Email Address" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Mobile Number
+                                <span>*</span>
+                            </label>
+                            <input type="number" class="form-control" ng-model="vm.sign_form['mobile_no']" placeholder="Enter Mobile Number" ng-required="true">
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label>Password
+                                <span>*</span>
+                            </label>
+                            <input type="password" ng-model="vm.sign_form['password']" class="form-control" placeholder="Password" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>confirm Password
+                                <span>*</span>
+                            </label>
+                            <input type="password" ng-model="cnfrm_password" compare-to="vm.sign_form['password']" class="form-control" placeholder="Password"
+                                ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Agency Address
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="vm.sign_form['address']" class="form-control" placeholder="Agency Address" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>city
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="vm.sign_form['city']" class="form-control" placeholder="city" ng-required="true">
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label>state/province
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="vm.sign_form['state']" class="form-control" placeholder="State" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>country
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="vm.sign_form['country']" class="form-control" placeholder="Country" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Pin
+                                <span>*</span>
+                            </label>
+                            <input type="number" ng-model="vm.sign_form['pin_code']" class="form-control" placeholder="Pin Code" ng-required="true">
+                        </div>
+
+
+                        <input class="form-control login-btn" type="button" ng-click="form.$valid && create_agent_account()" value="Submit"
+                            ng-disabled="form.$invalid">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+[2018-10-07T14:03:01.116] [ERROR] Account - { r: 'cr_acc', method: 'post', msg: 'phone Number invalid' }
+[2018-10-07T14:03:17.772] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { ccode: 91,
+     mobile_no: 7004324388,
+     email: 'mk6598951@gmail.com',
+     name: 'manish kumar admin',
+     password: 'manish@123',
+     role: 2,
+     address: '',
+     city: 'Patna',
+     state: 'Bihar',
+     country: 'India',
+     pin_code: '845303' } }
+[2018-10-07T15:01:16.905] [ERROR] Account - { url: '/accounts/login', r: 'auth', msg: 'token_not_found' }
+[2018-10-07T15:01:42.108] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { mobile_no: '700432434',
+     ccode: 91,
+     password: 'akmjsk',
+     role: '2',
+     token: 5 } }
+[2018-10-07T15:03:41.916] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { mobile_no: 700432434,
+     ccode: 91,
+     password: 'akmjsk',
+     role: '2',
+     token: 5 } }
+[2018-10-07T15:07:00.909] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { mobile_no: 700432434,
+     ccode: 91,
+     password: 'akmjsk',
+     role: '2',
+     token: 5 } }
+[2018-10-07T15:08:27.109] [ERROR] Account - { r: 'login', method: 'post', msg: 'phone Number invalid' }
+[2018-10-07T15:09:06.800] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2018-10-07T15:09:20.585] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2018-10-07T21:54:05.295] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { role: 'MUMBAI',
+     mobile_no: '7004324345',
+     password: 'manish@123',
+     token: '5' } }
+[2018-10-07T21:55:25.914] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2018-10-07T21:55:39.250] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2018-10-07T21:55:54.453] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2018-10-07T21:56:03.471] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2018-10-07T21:56:08.149] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }

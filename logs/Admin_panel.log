@@ -1,0 +1,9 @@
+[2018-10-07T15:29:14.948] [ERROR] Admin_panel - { url: '/adminPanels/rd_pro', r: 'auth', msg: 'token_not_found' }
+[2018-10-07T15:32:01.387] [ERROR] Admin_panel - { r: 'rd_pro',
+  method: 'post',
+  msg: 'Only admin can do CRUD operations' }
+[2018-10-07T16:21:49.299] [ERROR] Admin_panel - { r: 'del_pro', method: 'post', msg: 'No agents user find' }
+[2018-10-07T16:25:09.373] [ERROR] Admin_panel - { r: 'del_pro', method: 'post', msg: 'No agents user find' }
+[2018-10-07T23:45:02.347] [ERROR] Admin_panel - { url: '/adminPanels/ed_pro', r: 'auth', msg: 'token_not_found' }
+[2018-10-07T23:51:35.294] [ERROR] Admin_panel - { r: 'rd_pro', method: 'post', msg: 'No agents user find' }
+[2018-10-07T23:51:48.090] [ERROR] Admin_panel - { r: 'rd_pro', method: 'post', msg: 'No agents user find' }

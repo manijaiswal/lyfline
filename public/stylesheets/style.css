@@ -1,0 +1,194 @@
+.banner{
+    background: url(../images/Webimage01.png)no-repeat;
+    min-height: 675px;
+    background-size: cover;
+    position:relative;
+}
+
+
+
+.header-main{
+    padding: 1em 0;
+    background: #2B5C7A;
+}
+
+.header-main p {
+  
+  text-align: center;
+  font-family: cursive;
+  font-size: 3.5vw;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.1;
+  letter-spacing: 0.75px;
+  color: #ffffff;
+}
+.header-main p span.glyphicon{
+    margin-right: 5px;
+}
+
+.navbar-right { 
+    margin-right: 0;
+}
+
+.social-icon a {
+    font-size: 1.3em;
+    color: #FDFFFE;
+    margin: 0 .5em;
+    border: 1px solid transparent;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+    transition: .5s all;
+}
+
+.navbar-nav .nav-item{
+    background: #204E68;
+    width: auto;
+    text-align: center;
+    justify-content: center;
+    margin-right: 5px;
+    border: 1px solid gray;
+
+    
+}
+
+.navbar-nav .nav-item .nav-link{
+    font-family: Nirmala UI;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    color:#fff!important
+}
+
+
+.filter{
+    border:1px solid #DEDCDD;
+    background: #EEEEEE;
+}
+
+.form-group.col-md-12 {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.col-md-12 {
+    display: flex;
+    align-items: center;
+}
+
+.form-group .label{
+    width:10px
+}
+
+.filter .form-control{
+    border:0!important;
+    border-radius: 0!important;
+}
+
+
+.table-data{
+    text-align: center
+}
+
+.dest{
+    margin-top:-10px;
+}
+
+.table-header{
+    background: #1D4F61;
+    color:#fff;
+    font-size: 20px;
+
+}
+
+.login-btn{
+    color:#fff;
+    background:#4990CA;
+    cursor: pointer;
+}
+
+.form-control:disabled{
+    background:#B0392E;
+    opacity: 1;
+}
+
+fieldset.title {
+    border-top: 1px solid #aaa;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    display: block;
+    text-align: center;
+}
+
+fieldset.title legend {
+    padding: 5px 10px;
+}
+
+label span{
+    color:red
+}
+
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top :2%;
+    left:50%;
+    
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .loading{
+    cursor: wait;
+  }
+
+  .ng-invalid {
+    border-color: red;
+    outline-color: red;
+  }
+  .ng-valid {
+    border-color: green;
+    outline-color: green;
+  }
+
+
+  #cover {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1; /* make sure logout_box has a z-index of 2 */
+	background-color: #ddd;
+	opacity: 0.3;
+}
+
+
+.person-card .person-img{
+    width: 10em;
+    position: absolute;
+    top: -5em;
+    left: 50%;
+    margin-left: -5em;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+.scoller{
+    height:400px;
+    overflow-y: scroll;
+}

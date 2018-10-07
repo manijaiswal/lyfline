@@ -1,0 +1,43 @@
+<div class="banner">
+    <div class="container">
+        <h1>This is admin dashboard</h1>
+        <div class="card">
+                <h5 class="card-header">Profile Details of admin</h5>
+                <div class="card-body">
+                      <h5 class="card-title">Name:  {{profile_data['name']}}</h5>
+                      <p class="card-text">mobile Number: {{profile_data['mobile_no']}}</p>
+                      <p class="card-text"> Email: {{profile_data['email']}}</p>
+                      <p class="card-text"> Address: {{profile_data['address']}}</p>
+                      <p class="card-text"> city: {{profile_data['city']}}</p>
+                      <p class="card-text"> Pincode: {{profile_data['pin_code']}}</p>
+                      <p class="card-text"> state: {{profile_data['state']}}</p>
+                      <p class="card-text"> country: {{profile_data['country']}}</p>
+                </div>
+        </div>
+
+        <br />
+
+        <h3>Agents Details</h3>
+        <div class="row">
+            <div class="card" ng-repeat="profile in data">
+                <div class="row" style="padding: 20px">
+                    <p class="col-md-12" style="color:brown">Account createdAt:--{{profile.createdAt | date}}</p>
+                    <div class="col-md-4">Name: {{profile['name']}}</div>
+                    <div class="col-md-4">mobile Number: {{profile['mobile_no']}}</div>
+                    <div class="col-md-4">Email: {{profile['email']}}</div>
+                    <div class="col-md-4">Address: {{profile['address']}}</div>
+                    <div class="col-md-4">city: {{profile['city']}}</div>
+                    <div class="col-md-4">Pincode: {{profile['pin_code']}}</div>
+                    <div class="col-md-4">state: {{profile['state']}}</div>
+                    <div class="col-md-4">country: {{profile['country']}}</div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn  btn-success" ng-click="editModal(profile)">Edit...</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class='btn  btn-danger' ng-click="deleteProfile(profile)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

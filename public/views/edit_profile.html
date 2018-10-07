@@ -1,0 +1,80 @@
+<div> 
+    <div class="container" ng-disabled="bg_disable">
+        <div id="cover" ng-show="bg_disable"></div>
+        <div class="row" style="padding-top:8%">
+            <div class="loader" ng-if="loaded==false"></div>
+            <div class="col-md-8 offset-md-2">
+                <div class="jumbotron" style="background:#fff">
+                    <h3>Edit Agent Profile</h3>
+                    <fieldset class="title">
+                        <legend>Details</legend>
+                    </fieldset>
+                    <form name="form" class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label> Name
+                                <span>*</span>
+                            </label>
+                            <input type="text" class="form-control" ng-model="sign_form['name']" placeholder="Enter Your name" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label> Email
+                                <span>*</span>
+                            </label>
+                            <input type="email" class="form-control" ng-model="sign_form['email']" placeholder="Enter Email Address" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Mobile Number
+                                <span>*</span>
+                            </label>
+                            <input type="number" class="form-control" ng-model="sign_form['mobile_no']" placeholder="Enter Mobile Number" ng-required="true" ng-disabled="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label> Address
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="sign_form['address']" class="form-control" placeholder="Agency Address" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>city
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="sign_form['city']" class="form-control" placeholder="city" ng-required="true">
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label>state/province
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="sign_form['state']" class="form-control" placeholder="State" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>country
+                                <span>*</span>
+                            </label>
+                            <input type="text" ng-model="sign_form['country']" class="form-control" placeholder="Country" ng-required="true">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Pin
+                                <span>*</span>
+                            </label>
+                            <input type="number" ng-model="sign_form['pin_code']" class="form-control" placeholder="Pin Code" ng-required="true">
+                        </div>
+
+
+                        <input class="form-control login-btn" type="button" ng-click="form.$valid && editProfile(sign_form)" value="Submit" ng-disabled="form.$invalid">
+                        <button type="button" class="btn btn-default " ng-click="close() ">close</button> 
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
