@@ -9,7 +9,7 @@ var logger              =   log4jsLogger.getLogger('DataBase');
 //'mongodb://localhost:27017/'+configs.DB_NAME
 
 //mongodb://<dbuser>:<dbpassword>@ds139645.mlab.com:39645/vizack
-mongoose.connect('mongodb://vizack:Nitpatna1@ds139645.mlab.com:39645/vizack',{useNewUrlParser: true },(err)=>{
+mongoose.connect('mongodb://localhost:27017/'+configs.DB_NAME,{useNewUrlParser: true },(err)=>{
     if(err){
         logger.error({"r":"mongodb","msg":"mongodb_connection_error","body":err});
         return;

@@ -10,8 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.css">
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.1.0/css/bootstrap-toggle.min.css" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="/stylesheets/jquery-ui.css" />
+	<link href="/stylesheets/regst.css" rel='stylesheet' type='text/css' />
+  <link href="/stylesheets/minimal-slider.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="/stylesheets/flexslider.css" type="text/css" media="screen" property="" />
+  <link href="/stylesheets/sb-admin.css" rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-sb-admin/vendor/fontawesome-free/css/all.min.css" />
 
   <script src="/lib/angular.min.js"></script>
   <script src="/lib/angular.route.min.js"></script>
@@ -29,6 +33,28 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap.min.js"></script>
   <!-- <script src="js/lib/ui-bootstrap.min.js"></script>     -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap-tpls.min.js"></script>
+  <script src="/lib/minimal-slider.js"></script>
+  <!-- flexSlider (for testimonials) -->
+      <!-- Calendar -->
+          <script src="/lib/jquery-ui.js"></script>
+            <script>
+                $(function() {
+                $( "#datepicker" ).datepicker();
+                });
+            </script>
+          <!-- //Calendar -->
+  
+    <script defer src="/lib/jquery.flexslider.js"></script>
+    <script>
+      $(window).load(function () {
+        $('.flexslider').flexslider({
+          animation: "slide",
+          start: function (slider) {
+            $('body').removeClass('loading');
+          }
+        });
+      });
+    </script>
 
   <script type="text/javascript" src='/services/apiServices.js'></script>
   <script type="text/javascript" src='/views/controllers/mainController.js'></script>

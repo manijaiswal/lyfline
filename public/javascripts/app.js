@@ -10,32 +10,66 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
         templateUrl:'views/home.html',
         controller:'MainController'
     })
-    .state('signup',{
-        url:'/sign-up',
-        templateUrl:'views/signup.html',
+    .state('patient_signup',{
+        url:'/patient_signUp',
+        templateUrl:'views/patient/signup.html',
         controller:'MainController',
         controllerAs: 'vm'
     })
-    .state('login',{
-        url:'/login',
-        templateUrl:'views/login.html',
+    .state('patient_login',{
+        url:'/patient_login',
+        templateUrl:'views/patient/login.html',
         controller:'MainController',
         controllerAs: 'vm'
     })
-    .state('agent_dashboard',{
-        url:'/agent_dashboard',
-        templateUrl:'views/agent_dashboard.html',
+    .state('doctor_login',{
+        url:'/doctor_login',
+        templateUrl:'views/doctor/login.html',
         controller:'MainController',
         controllerAs: 'vm'
     })
-    .state('admin_dashboard',{
-        url:'/admin_dashboard',
-        templateUrl:'views/admin_dashboard.html',
-        controller:'HeaderController',
+    .state('doctor_signup',{
+        url:'/doctor_signup',
+        templateUrl:'views/doctor/signup.html',
+        controller:'MainController',
         controllerAs: 'vm'
     })
-    
-
+    .state('doctor_dashboard',{
+        url:'/doctor_dashboard',
+        templateUrl:'views/doctor/dashboard.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('doctor_dashboard.patient',{
+        url:'/patients',
+        templateUrl:'views/doctor/admin/patients.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('doctor_dashboard.dashboard',{
+        url:'/dashboard',
+        templateUrl:'views/doctor/admin/dashboard.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('doctor_dashboard.addDetails',{
+        url:'/add_details',
+        templateUrl:'views/doctor/admin/addDetail.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('clinic_login',{
+        url:'/clinic_login',
+        templateUrl:'views/clinic/login.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('clinic_signup',{
+        url:'/clinic_signup',
+        templateUrl:'views/clinic/signup.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
 }]);    
 
 
