@@ -46,7 +46,7 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
 
         var role = ipCookie('role');
         
-
+        var api = '';
         if(role==1){
             api = 'verify_email'
         }
