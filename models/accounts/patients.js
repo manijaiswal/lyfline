@@ -5,33 +5,31 @@ var SALT_WORK_FACTOR = 10;
 var Schema = mongoose.Schema;
 var ObjectId    = Schema.ObjectId;
 
-var DoctorSchema = new Schema({
+var PatientSchema = new Schema({
     ccode: { type: Number},    //country code
     mobile_no: { type: Number},    // mobile_no
     email: { type: String},   // email address of user
     first_name: { type: String},    // name of person
     last_name: { type: String},
-    spec:{type:String},
     sex:{type:String},
     vrfy: { type: Boolean},   // verification done or not
     vrfy_at: { type: Date, default: Date.now },  //verification date
     role: { type: Number},    // verification_date,
     password:{type:String,required:true},
     address:{type:String},
-    city:{type:String},
-    state:{type:String},
-    distric:{type:String},
-    pin_code:{type:Number},
-    hospital_name:{type:String},
-    hospital_type:{type:String},
     uni_id:{type:String},
-    
+    mart_sts:{type:String},
+    par_name:{type:String},
+    par_sex:{type:String},
+    par_mob:{type:Number},
+    par_rel:{type:String},
+    dob:{type:String}
 },{
     timestamps:true
 })
 
 
-DoctorSchema.pre("save",function(next){
+PatientSchema.pre("save",function(next){
     var user = this;
     console.log(this);
     if(!user.cat){
@@ -52,7 +50,7 @@ DoctorSchema.pre("save",function(next){
    
 });
 
-DoctorSchema.methods.comparePassword = function(candidatePassword, cb) {
+PatientSchema.methods.comparePassword = function(candidatePassword, cb) {
     var user = this;
     bcrypt.compare(candidatePassword, user.password, function(err, isMatch) {
         if (err) return cb(err,null);
@@ -60,7 +58,7 @@ DoctorSchema.methods.comparePassword = function(candidatePassword, cb) {
     });
 };
 
-DoctorSchema.statics = {
+PatientSchema.statics = {
     ROLE:{
         DOCTER :  1,
         PATIENT : 2,
@@ -68,4 +66,4 @@ DoctorSchema.statics = {
     }
 }
 
-mongoose.model('Doctor',DoctorSchema);
+mongoose.model('Patient',PatientSchema);

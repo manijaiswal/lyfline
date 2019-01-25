@@ -9,7 +9,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Doctor Name</th>
                         <th>Date</th>
                         <th>Status</th>
                         <th>problem</th>
@@ -29,14 +29,15 @@
                     </tr>
                 </tfoot> -->
                 <tbody>
-                    <tr ng-repeat="data in totalPatient track by $index">
-                        <td>{{data['patient']['first_name']}} {{data['patient']['last_name']}}</td>
-                        <td>{{(data['treat']['createdAt'] | date) || "01/01/2018"}}</td>
-                        <td>{{data['treat']['status'] || "completed"}}</td>
-                        <td>{{data['treat']['disease']}}</td>
-                        <td>{{data['treat']['medicine']}}</td>
-                        <td>{{data['treat']['test']}}</td></td>
-                        <td> <a href="">Report link</a> </td>
+                    <p ng-if="totalHistory['history'].length==0">No record found</p>
+                    <tr ng-repeat="data in totalHistory['history'] track by $index">
+                        <td>{{data['doctor']}}</td>
+                        <td>{{(data['createdAt'] | date) || "01/01/2018"}}</td>
+                        <td>{{data['status'] || "completed"}}</td>
+                        <td>{{data['disease']}}</td>
+                        <td>{{data['medicine']}}</td>
+                        <td>{{data['test']}}</td></td>
+                        <td> <a href="https://drive.google.com/file/d/115eNQGsUXf6JAaGk93Jany0_Fv-V9_I4/view" target="_blank">Report link</a> </td>
                     </tr>
                 </tbody>
             </table>

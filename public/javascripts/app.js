@@ -22,6 +22,24 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
         controller:'MainController',
         controllerAs: 'vm'
     })
+    .state('patient_dashboard',{
+        url:'/patient_dashboard',
+        templateUrl:'views/patient/dashboard.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('patient_dashboard.patient',{
+        url:'/history',
+        templateUrl:'views/patient/admin/history.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('patient_dashboard.addNew',{
+        url:'/add_new',
+        templateUrl:'views/patient/admin/addNew.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
     .state('doctor_login',{
         url:'/doctor_login',
         templateUrl:'views/doctor/login.html',
@@ -70,6 +88,12 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
         controller:'MainController',
         controllerAs: 'vm'
     })
+    .state('verify',{
+        url:'/verify',
+        templateUrl:'views/verify.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
 }]);    
 
 
@@ -112,7 +136,7 @@ app.run(['$rootScope','$location','ipCookie','$state','$window','ApiFactory',fun
          $rootScope.logout1 = function() {
             ipCookie.remove('token');
             ipCookie.remove('aid');
-            ipCookie.remove('profile');
+            ipCookie.remove('role');
             $location.path('/')
          };
     })

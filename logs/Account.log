@@ -66,3 +66,125 @@
 [2018-10-07T21:56:08.149] [ERROR] Account - { r: 'login',
   method: 'post',
   msg: 'Password not match with this number' }
+[2019-01-24T22:10:55.194] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { state: 'Single',
+     first_name: 'manish',
+     last_name: 'kumar',
+     email: 'mk6598951@gmail.com',
+     mobile_no: '7870268510',
+     spec: 'Female',
+     sex: 'Male',
+     hospital_name: 'fucking',
+     hospital_type: 'Gov',
+     distric: 'motihari',
+     city: 'motihati',
+     pin_code: '845303',
+     address: 'purnahiya' } }
+[2019-01-24T22:18:52.274] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { state: 'Single',
+     first_name: 'manish',
+     last_name: 'kumar',
+     email: 'mk6598951@gmail.com',
+     mobile_no: '7870268510',
+     spec: 'Female',
+     sex: 'Male',
+     hospital_name: 'fucking',
+     hospital_type: 'Gov',
+     distric: 'motihari',
+     city: 'motihati',
+     pin_code: '845303',
+     address: 'purnahiya' } }
+[2019-01-24T22:28:21.939] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { state: 'Married',
+     first_name: 'manish',
+     last_name: 'Kumar',
+     email: 'mk6598951@gmail.com',
+     mobile_no: '7870268510',
+     spec: 'Male',
+     sex: 'Male',
+     hospital_name: 'mamsis',
+     hospital_type: 'Gov',
+     distric: 'motihari',
+     city: 'motihari',
+     pin_code: '845303',
+     address: 'motihati' } }
+[2019-01-24T22:33:25.982] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 
+   { ValidationError: Account validation failed: name: Path `name` is required.
+       at MongooseError.ValidationError (/home/manish/Documents/vizack-server/node_modules/mongoose/lib/error/validation.js:30:11)
+       at model.Document.invalidate (/home/manish/Documents/vizack-server/node_modules/mongoose/lib/document.js:1972:32)
+       at p.doValidate.skipSchemaValidators (/home/manish/Documents/vizack-server/node_modules/mongoose/lib/document.js:1840:17)
+       at /home/manish/Documents/vizack-server/node_modules/mongoose/lib/schematype.js:841:9
+       at _combinedTickCallback (internal/process/next_tick.js:73:7)
+       at process._tickCallback (internal/process/next_tick.js:104:9)
+     errors: { name: [Object] },
+     _message: 'Account validation failed',
+     name: 'ValidationError' } }
+[2019-01-24T22:41:55.742] [ERROR] Account - { r: 'cr_acc', method: 'post', msg: 'Account already exists' }
+[2019-01-25T18:07:18.959] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { sex: 'Male',
+     mart_sts: 'Single',
+     par_sex: 'Male',
+     first_name: 'Manidh',
+     last_name: 'kiuhshj',
+     email: 'bhavishyagarg02@gmail.com',
+     mobile_no: '78702658410',
+     dob: 'Wed Jan 02 2019 00:00:00 GMT+0530 (India Standard Time)',
+     password: 'Manish@123',
+     address: 'Patna',
+     par_name: 'manish',
+     par_rel: 'parent',
+     par_mob: '7546842358',
+     med_list: 'kjskjkskk',
+     role: '2',
+     ccode: '91' } }
+[2019-01-25T18:12:33.186] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { sex: 'Male',
+     mart_sts: 'Married',
+     par_sex: 'Male',
+     first_name: 'Mnaisjjhd',
+     last_name: 'kjkjjhjd',
+     email: 'bhavishyagarg02@gmail.com',
+     mobile_no: '7870265481',
+     password: 'Manish@123',
+     address: 'Patna',
+     par_name: 'Manish',
+     par_rel: 'Parent',
+     par_mob: '7455477845',
+     curr_treat: 'true',
+     med_list: 'mmjsjjsjhjhjhs',
+     role: '2',
+     ccode: '91' } }
+[2019-01-25T18:51:13.104] [ERROR] Account - { url: '/accounts/login_doc', r: 'auth', msg: 'token_not_found' }
+[2019-01-26T00:20:05.232] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2019-01-26T00:20:14.150] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2019-01-26T00:20:38.436] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2019-01-26T00:52:16.145] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-01-26T00:53:10.362] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2019-01-26T01:00:59.986] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }

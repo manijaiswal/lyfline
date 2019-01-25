@@ -8,8 +8,9 @@ var errors ={
     "account_not_exists"    :    [700,"Account doesnot exists"],
     "password_not_match"    :    [800,"Password not match with this number"],
     "only_admin_rights"     :    [900,"Only admin can do CRUD operations"],
-    "no_agent_user"         :    [1000,"No agnet user find"]
-    
+    "no_agent_user"         :    [1000,"No agnet user find"],
+    "email_not_sent"        :    [1050,"Email sending failed"],
+    "otp_invalid"           :    [1100,"otp is not valid or used"]
 }
 
 

@@ -1,22 +1,23 @@
-<div class="bg">
+<div class="bg" ng-disabled="bg_disable">
     <h1>Doctor Registration Form </h1>
+    <div id="cover" ng-show="bg_disable"></div>    
+    <div class="loader" ng-if="loaded==false"></div>
     <div class="register-form-w3layouts">
         <!-- Form starts here -->
-
         <form>
             <h3 class="sub-heading-agileits">Doctor Login</h3>
             <div class="field-agileinfo-spc form-w3-agile-text">
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="text" name="Name" placeholder="First Name" required="">
+                    <input type="email" name="email" placeholder="Email" ng-required="true" ng-model="vm.form['email']">
                 </div>
             </div>
             <div class="field-agileinfo-spc form-w3-agile-text">
-                <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="email" name="Email" placeholder="Email" required="">
+                <div class="field-agileinfo-spc form-w3-agile-text1"> 
+                    <input type="password" name="pass" placeholder="Password" ng-required="true" ng-model="vm.form['password']">
                 </div>
             </div>
             <div class="clear"></div>
-            <input type="submit" value="Submit">
+            <input type="button" ng-click="loginForm(vm.form)" value="Submit">
             <input type="reset" value="Clear Form">
             <p style="color:aliceblue;margin-top:2%">Don't Have a account? <a href="#!/doctor_signup">SignUp here</a> </p>
             <div class="clear"></div>

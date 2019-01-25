@@ -318,6 +318,7 @@ h3.sub-heading-agileits {
 
 .register-form-w3layouts input[type="text"],
 .register-form-w3layouts input[type="email"],
+.register-form-w3layouts input[type="password"],
 .register-form-w3layouts textarea,
 select.form-control,
 input#datepicker {
@@ -352,7 +353,7 @@ select.form-control option {
     background: #000;
 }
 
-.register-form-w3layouts input[type="submit"],
+.register-form-w3layouts input[type="button"],
 .register-form-w3layouts input[type="reset"] {
     text-transform: capitalize;
     background: #82bb3b;
@@ -373,7 +374,7 @@ select.form-control option {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.register-form-w3layouts input[type="submit"] {
+.register-form-w3layouts input[type="button"] {
     background: #23b4cc;
 }
 
@@ -381,7 +382,7 @@ select.form-control option {
     float: right;
 }
 
-.register-form-w3layouts input[type="submit"]:hover {
+.register-form-w3layouts input[type="button"]:hover {
     background: #82bb3b;
     color: #fff;
 }
@@ -547,7 +548,7 @@ ul.radio-buttons-w3-agileits li {
     h3.sub-heading-agileits {
         font-size: 19px;
     }
-    .register-form-w3layouts input[type="submit"],
+    .register-form-w3layouts input[type="button"],
     .register-form-w3layouts input[type="reset"] {
         width: 100%;
         font-size: 1.05em;

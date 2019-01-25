@@ -1,0 +1,39 @@
+<div class="row" ng-disabled="bg_disable" style="margin-top:3%">
+    <div id="cover" ng-show="bg_disable"></div>
+    <div class="loader" ng-if="loaded==false"></div>
+
+    <div class="col-md-12">
+        <div class="card" style="padding:5%">
+            <form name="form">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Doctor name</label>
+                    <input type="type" class="form-control" placeholder="Doctor Name" ng-required="true" ng-model="vm.form['doctor']">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Diease name</label>
+                    <input type="type" class="form-control" placeholder="Fever" ng-required="true" ng-model="vm.form['disease']">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Test</label>
+                    <textarea class="form-control" rows="3" ng-required="true" ng-model="vm.form['test']"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Medicines</label>
+                    <textarea class="form-control" rows="3" ng-required="true" ng-model="vm.form['medicine']"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Suggestions</label>
+                    <textarea class="form-control" rows="3" ng-required="true" ng-model="vm.form['suggesstion']"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">next follow up(in days)</label>
+                    <input type="number" class="form-control" placeholder="meet after 5 days" ng-required="true"
+                        ng-model="vm.form['status']">
+                </div>
+                <button type="button" class="btn btn-primary" ng-click="medicineSubmitPatient(vm.form)" ng-disabled="form.$invalid">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

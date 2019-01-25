@@ -1,0 +1,5 @@
+[2019-01-25T19:28:05.440] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { patientId: 'VjX5DLQcP', doctorId: '5c49f342659d762f28c8792b' } }
+[2019-01-26T01:45:42.269] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }

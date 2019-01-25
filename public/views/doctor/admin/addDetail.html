@@ -1,0 +1,182 @@
+<div class="container" ng-disabled="bg_disable">
+    <div id="cover" ng-show="bg_disable"></div>    
+    <div class="loader" ng-if="loaded==false"></div>
+    <div class="row">
+        <div class="col-md-8">
+            <form name="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Please enter patient unique Id</label>
+                    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Unique Id" ng-model="vm.form['patientId']">
+                    <small id="emailHelp" class="form-text text-muted">Please enter the unique id</small>
+                </div>
+                <button  class="btn btn-primary" ng-click="findPatientDetail(vm.form)">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:5%" ng-show="!isObjectEmpty(patientDetail)">
+        <div class="col-12">
+            <div class="card"> 
+                <div class="card-body">
+                    <div class="card-title mb-4">
+                        <div class="d-flex justify-content-start">
+                            <div class="image-container">
+                                <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px"
+                                    class="img-thumbnail" />
+                            </div>
+                            <div class="userData ml-3">
+                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">
+                                        {{patientDetail['patient']['first_name']}}</a></h2>
+                                <!-- <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Video Uploads</h6>
+                                <h6 class="d-block"><a href="javascript:void(0)">300</a> Blog Posts</h6> -->
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab"
+                                        aria-controls="basicInfo" aria-selected="true" target="_self">Basic Info</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices"
+                                        role="tab" aria-controls="connectedServices" aria-selected="false" target="_self">Connected
+                                        Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="add-medicine" data-toggle="tab" href="#addMedicine"
+                                        role="tab" aria-controls="addMedicine" aria-selected="false" target="_self">Add precription
+                                        Services</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content ml-1" id="myTabContent">
+                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+    
+    
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Full Name</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            {{patientDetail['patient']['first_name']}} {{patientDetail['patient']['last_name']}}
+                                        </div>
+                                    </div>
+                                    <hr />
+    
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Age</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            18
+                                        </div>
+                                    </div>
+                                    <hr />
+    
+    
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Address</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                                {{patientDetail['patient']['address']}}
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Sex</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                                {{patientDetail['patient']['sex']}}
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <p style="color:red;font-weight:bold">Emergency details--></p>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Relative name</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            {{patientDetail['patient']['par_name']}}
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Relative contact</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            {{patientDetail['patient']['par_mob']}}
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <table class="table">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">S.No</th>
+                                                <th scope="col">Docto's Name</th>
+                                                <th scope="col">Diease</th>
+                                                <th scope="col">medicine</th>
+                                                <th scope="col">Test</th>
+                                                <th scope="col">Suggestions</th>
+                                                <th scope="col">Link</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="data in patientDetail['previousHistory'] track by $index">
+                                                <th scope="row">{{$index+1}}</th>
+                                                <td>{{data['doctor']}}</td>
+                                                <td>{{data['disease']}}</td>
+                                                <td>{{data['medicine']}}</td>
+                                                <td>{{data['test']}}</td>
+                                                <td>{{data['suggesstion']}}</td>
+                                                <td><a href="">documents</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="addMedicine" role="tabpanel" aria-labelledby="add-medicine">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form name="form">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput1">Diease name</label>
+                                                    <input type="type" class="form-control"  placeholder="Fever" ng-required="true" ng-model="vm.form['disease']">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Test</label>
+                                                    <textarea class="form-control"  rows="3" ng-required="true" ng-model="vm.form['test']"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Medicines</label>
+                                                    <textarea class="form-control"  rows="3" ng-required="true" ng-model="vm.form['medicine']"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Suggestions</label>
+                                                    <textarea class="form-control"  rows="3" ng-required="true" ng-model="vm.form['suggesstion']"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">next follow up(in days)</label>
+                                                    <input type="number" class="form-control"  placeholder="meet after 5 days" ng-required="true" ng-model="vm.form['status']">   
+                                                </div>
+                                                <button type="button" class="btn btn-primary" ng-click="medicineSubmit(vm.form,patientDetail[0]['_id'])" ng-disabled="form.$invalid">Submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>

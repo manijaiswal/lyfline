@@ -1,0 +1,19 @@
+<div class="container">
+
+    <div class="row" ng-disabled="bg_disable">
+        <div id="cover" ng-show="bg_disable"></div>    
+        <div class="loader" ng-if="loaded==false"></div>
+        <div class="col-md-8 offset-md-2">
+            <div class="jumbotron">
+                <h1 class="display-4">Verify Otp</h1>
+                <form name="form">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Enter OTP</label>
+                        <input type="password" class="form-control"  placeholder="xxxxxx" ng-model="vm.form['code']">
+                    </div>
+                    <button type="button" class="btn btn-primary" ng-click="verifyEmail(vm.form)">Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
