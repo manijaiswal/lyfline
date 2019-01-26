@@ -108,7 +108,10 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
         .then((res)=>{
 
             var aid = res['data']['_id'];
+            var role = res['data']['role']
             ipCookie('aid',aid);
+            ipCookie('role',role)
+
             console.log(res)
 
             $scope.bg_disable = false;
