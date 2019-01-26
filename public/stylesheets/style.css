@@ -1416,3 +1416,30 @@ h3.subheading-w3-agile {
 }
 
 /* -- //Responsive code -- */
+
+.banner{
+    background: url(../images/bg1.jpg)no-repeat;
+    min-height: 675px;
+    background-size: cover;
+    position:relative;
+}
+
+.filter{
+    border:1px solid #DEDCDD;
+    background: #EEEEEE;
+}
+
+.table-header{
+    background: #1D4F61;
+    color:#fff;
+    font-size: 20px;
+
+}
+
+
+
+
+
+  
+
+

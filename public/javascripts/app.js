@@ -1,4 +1,4 @@
-var app = angular.module('app',['ngRoute','ipCookie','ui.router','ui.bootstrap','MainController','HeaderController','EditProfileController']);
+var app = angular.module('app',['ngRoute','ipCookie','ui.router','ui.bootstrap','MainController','HeaderController','EditProfileController','chart.js']);
 
 
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
@@ -8,6 +8,11 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
     .state('app',{
         url:'/',
         templateUrl:'views/home.html',
+        controller:'MainController'
+    })
+    .state('search',{
+        url:'/search',
+        templateUrl:'views/findDoctor.html',
         controller:'MainController'
     })
     .state('patient_signup',{

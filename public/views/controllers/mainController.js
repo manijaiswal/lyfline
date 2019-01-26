@@ -1,4 +1,4 @@
-var MainController  = angular.module('MainController',['ApiFactory','ui.bootstrap']);
+var MainController  = angular.module('MainController',['ApiFactory','ui.bootstrap','chart.js']);
 
 MainController.controller('MainController',['$scope','$http','$location','ipCookie','ApiFactory',function($scope,$http,$location,ipCookie,ApiFactory){
     console.log('In main controller');
@@ -378,6 +378,23 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
         }) 
     }
     
+    $scope.totalDoctors = function(){
+        $scope.bg_disable = true;
+        $scope.loaded     = false
+        ApiFactory.save('POST',RESOURCE_URL+'/doctors/tot_doc',{})
+        .then((res)=>{
+            console.log(res)
+            $scope.totalDoctors = res['data']
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+        })
+        .catch((e)=>{
+            alert(e['message']);
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            console.log("err",e);
+        })
+    }
     $scope.init = function(){
         if($location.path()=='/doctor_dashboard/patients'){
             $scope.totalPatients()
@@ -391,12 +408,20 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
             $scope.totalReports()
         }
 
+        if($location.path()=='/search'){
+            $scope.totalDoctors();
+        }
+
     }
 
-    $scope.init();
+    $scope.labels = ['Below permissible', 'permissible', 'above permissible'];
+    $scope.series = ['Series A'];
+  
+    $scope.data = [
+      [25,20,55]
+    ];
 
- 
-    
+    $scope.init()    
 }])
 
 

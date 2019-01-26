@@ -882,3 +882,124 @@
 [2019-01-26T08:40:47.413] [INFO] DataBase - { r: 'mongodb',
   msg: 'Database_successfully_connected',
   body: 'success' }
+[2019-01-26T09:35:42.477] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T09:36:05.035] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T09:36:30.095] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T09:58:28.413] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T10:07:43.914] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T10:13:18.081] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T10:16:33.751] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T10:16:59.567] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T10:51:25.748] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:05:51.121] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:06:14.526] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:35:37.711] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:36:24.240] [ERROR] DataBase - { r: 'mongodb',
+  msg: 'mongodb_connection_error',
+  body: 
+   { MongoNetworkError: failed to connect to server [ds213255.mlab.com:13255] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND ds213255.mlab.com ds213255.mlab.com:13255]
+       at Pool.<anonymous> (/home/manish/Documents/vizack-server/node_modules/mongodb-core/lib/topologies/server.js:564:11)
+       at emitOne (events.js:96:13)
+       at Pool.emit (events.js:188:7)
+       at Connection.<anonymous> (/home/manish/Documents/vizack-server/node_modules/mongodb-core/lib/connection/pool.js:317:12)
+       at Connection.g (events.js:292:16)
+       at emitTwo (events.js:106:13)
+       at Connection.emit (events.js:191:7)
+       at Socket.<anonymous> (/home/manish/Documents/vizack-server/node_modules/mongodb-core/lib/connection/connection.js:246:50)
+       at Socket.g (events.js:292:16)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at connectErrorNT (net.js:1034:8)
+       at _combinedTickCallback (internal/process/next_tick.js:80:11)
+       at process._tickCallback (internal/process/next_tick.js:104:9)
+     name: 'MongoNetworkError',
+     errorLabels: [ 'TransientTransactionError' ] } }
+[2019-01-26T11:36:37.626] [ERROR] DataBase - { r: 'mongodb',
+  msg: 'mongodb_connection_error',
+  body: 
+   { MongoNetworkError: failed to connect to server [ds213255.mlab.com:13255] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND ds213255.mlab.com ds213255.mlab.com:13255]
+       at Pool.<anonymous> (/home/manish/Documents/vizack-server/node_modules/mongodb-core/lib/topologies/server.js:564:11)
+       at emitOne (events.js:96:13)
+       at Pool.emit (events.js:188:7)
+       at Connection.<anonymous> (/home/manish/Documents/vizack-server/node_modules/mongodb-core/lib/connection/pool.js:317:12)
+       at Connection.g (events.js:292:16)
+       at emitTwo (events.js:106:13)
+       at Connection.emit (events.js:191:7)
+       at Socket.<anonymous> (/home/manish/Documents/vizack-server/node_modules/mongodb-core/lib/connection/connection.js:246:50)
+       at Socket.g (events.js:292:16)
+       at emitOne (events.js:96:13)
+       at Socket.emit (events.js:188:7)
+       at connectErrorNT (net.js:1034:8)
+       at _combinedTickCallback (internal/process/next_tick.js:80:11)
+       at process._tickCallback (internal/process/next_tick.js:104:9)
+     name: 'MongoNetworkError',
+     errorLabels: [ 'TransientTransactionError' ] } }
+[2019-01-26T11:43:11.026] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:44:09.613] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:44:31.234] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:48:19.352] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:50:51.851] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:55:22.982] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T11:55:50.520] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:01:23.923] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:18:02.827] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:21:44.248] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:25:26.203] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:25:46.881] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:44:01.118] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:46:15.236] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T12:46:47.848] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }

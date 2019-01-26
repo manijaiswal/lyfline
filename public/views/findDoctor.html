@@ -1,0 +1,111 @@
+<div class="banner">
+    <div class="container">
+        <div class="row pt-4">
+            <div class="col-md-4 filter">
+                <div>
+                    <h2>Apply filter to find doctor</h2>
+                </div>
+                <hr>
+                <div class="container">
+                    <div class="row">
+                        <form class="col-12">
+                            <div class="form-group row">
+                                <label class="col-4">Specilist</label>
+                                <select class="form-control1 col-8" ng-model="vm.form['spec']" ng-init="vm.form['spec']='spec'">
+                                    <option value="spec">Specilist</option>
+                                    <option value="physician">Physician</option>
+                                    <option value="dental">Dental</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-4">State</label>
+                                <select class="form-control1 col-8" ng-model="vm.form['state']" ng-required="true" ng-init="vm.form['state']='state'">
+                                        <option value="state">State</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="new_delhi">New Delhi</option>
+                                        <option value="assam">Assam</option>
+                                </select>
+                            </div>
+
+                            <div class="row text-center" style="padding-left: 34%;padding-bottom: 15px;">
+                                <button type="button" class="btn btn-primary" style="background: #EE4947" ng-click="totalDoctors(vm.form)">Search</button>
+                                <button class="btn btn btn-success" ng-click="totalDoctors({})">All</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-8 scoller">
+                <div class="loader" ng-if="loaded==false"></div>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <td colspan="8" class="table-header">LyfLine</td>
+                        </tr>
+                        <tr style="color:white">
+                            <th scope="col">Doctor</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Hospital</th>
+                            <th scope="col">Speciality</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Sex</th>
+                            <th scope="col">Mobile Number</th>
+                            <th scope="col">Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <p ng-if="totalDoctors.length==0">No Doctor found</p>
+                        <tr ng-repeat="data in totalDoctors track by $index" class="spacer" style="background: #fff">
+                            <td scope="col">
+                                <div class="table-data">
+                                    <p style="margin-top:8px">{{data['first_name']}} {{data['last_name']}}</p>
+                                </div>
+                            </td>
+                            <td scope="col">
+                                <div class="table-data">
+                                    <img ng-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRphkLTT29jIbDWRNf60rrrCNrMN2Vo9V7tn_oFXiOcKzBKnwmh" alt="" width="50" height="50">
+                                    <figcaption>{{ticket.air_line}}</figcaption>
+                                </div>
+                            </td>
+                            <td scope="col">
+                                <div class="table-data">
+                                    <p style="margin-top:8px">{{data['hospital_name']}}</p>
+                                </div>
+                            </td>
+                            <td scope="col">
+                                <div class="table-data">
+                                    <p>{{data['spec']}}</p>
+                                    <p class="dest">5 year experience</p>
+                                </div>
+                            </td>
+                            <td scope="col">
+                                <div class="table-data">
+                                    <p>{{data['city']}}</p>
+                                    <p class="dest">{{data['distric']}}</p>
+                                </div>
+                            </td>
+                            <td scope="col">
+                                <div class="table-data">
+                                    <p>{{data['sex']}}</p>
+                                     
+                                </div>
+                            </td>
+                            <td scope="col">
+                                <div class="table-data">
+                                    <p class="dest">{{data['mobile_no']}}</p>
+                                </div>
+                            </td>
+                            <td scope="col">
+                                <!-- <button class="btn btn-primary" ng-click="book()">Book</button> -->
+                                <p>RS 500</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

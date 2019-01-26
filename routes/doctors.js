@@ -12,7 +12,8 @@ var AuthModule   = require('../utility/auth/auth_token');
 var otp_generator = require('../utility/code_generator');
 var phoneValidator = require('../utility/phoneNumber/phone_no_validator');
 var {sendOtpMail} = require("../mail-gun/sendMail"); 
-var {sendMedicine} = require("../mail-gun/sendMail"); 
+var {sendMedicine} = require("../mail-gun/sendMail");
+var {sendSms}     =  require('../sms/smsConfig'); 
 
 require('../models/accounts');
 require('../models/accounts/doctors');
@@ -173,7 +174,8 @@ router.post('/cr_medicine',(req,res)=>{
             return sendError(res,"Account doesnot exists","account_not_exists",constants.BAD_REQUEST); 
         }
 
-        var email = patient[0]['email']
+        var email = patient[0]['email'];
+        var mobileno = patient[0]['mobile_no']
 
         Doctor.find({_id:doctorId},function(err,doctor){
             if(err){
@@ -212,7 +214,15 @@ router.post('/cr_medicine',(req,res)=>{
                         return sendSuccess(res,saveData); 
                     }
 
-                    return sendSuccess(res,saveData);
+                    sendSms(mobileno,91,function(err,data){
+                        if(err){
+                            return sendSuccess(res,saveData);
+                        }
+
+                        return sendSuccess(res,saveData);
+                    })
+
+                    
                 })
             })
         })
@@ -382,13 +392,26 @@ router.post('/totalReport_dtl',(req,res)=>{
             })
         })
     })    
+});
+
+
+router.post('/tot_doc',(req,res)=>{
+
+    // req.checkBody("state",errorCodes.invalid_parameters[1]).optional();
+    // req.checkBody("spec",errorCodes.invalid_parameters[1]).optional();
+
+    // if("state" in req.body){
+
+    // }
+    Doctor.find({},function(err,doctors){
+        if(err){
+            logger.error({"r":"cr_acc","method":'post',"msg":err});
+            return sendError(res,err,"server_error",constants.SERVER_ERROR);
+        }
+
+        return sendSuccess(res,doctors);
+    })
 })
-
-
-
-
-
-
 
 
 
