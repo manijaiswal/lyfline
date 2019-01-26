@@ -876,3 +876,9 @@
 [2019-01-26T07:20:22.969] [INFO] DataBase - { r: 'mongodb',
   msg: 'Database_successfully_connected',
   body: 'success' }
+[2019-01-26T08:22:39.179] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-01-26T08:40:47.413] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }

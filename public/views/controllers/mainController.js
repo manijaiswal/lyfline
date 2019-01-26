@@ -267,7 +267,7 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
         console.log(data);
         $scope.bg_disable = true;
         $scope.loaded     = false
-        data['doctorId'] = '5c49f0529fc7e82cf5091d69';
+        data['doctorId'] = '5c4bcbd301df5e311f68154b';
         data['patientId'] = ipCookie('aid');
 
         ApiFactory.save('POST',RESOURCE_URL+'/doctors/cr_medicine',data)
