@@ -128,7 +128,7 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
     $scope.loginForm = function(data){
         $scope.bg_disable = true;
         $scope.loaded     = false
-        data['token'] = 5;
+        // data['token'] = 5;
         var api = '';
         if($location.path()=='/doctor_login'){
             data['role'] = 1;

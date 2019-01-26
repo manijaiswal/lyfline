@@ -164,7 +164,7 @@
                                                     <label for="exampleFormControlTextarea1">next follow up(in days)</label>
                                                     <input type="number" class="form-control"  placeholder="meet after 5 days" ng-required="true" ng-model="vm.form['status']">   
                                                 </div>
-                                                <button type="button" class="btn btn-primary" ng-click="medicineSubmit(vm.form,patientDetail[0]['_id'])" ng-disabled="form.$invalid">Submit</button>
+                                                <button type="button" class="btn btn-primary" ng-click="medicineSubmit(vm.form,patientDetail['patient']['_id'])" ng-disabled="form.$invalid">Submit</button>
                                             </form>
                                         </div>
                                     </div>

@@ -531,18 +531,18 @@ router.post('/verify_email_cli', (req, res) => {
 
 /* ==================middle ware for check token===================*/
 
-router.use(function(req,res,next){
-    var token = req.body.token || req.query.token;
-    console.log(req.body)
-    if(!token){
-        logger.error({ "url": req.originalUrl, "r": "auth", "msg": "token_not_found" });
-        return sendError(res,"Access without token is not authorised","invalid_tokn",constants.BAD_REQUEST);
-    }
-    if(token==5 || token == '5'){
-        next();
-    }
+// router.use(function(req,res,next){
+//     var token = req.body.token || req.query.token;
+//     console.log(req.body)
+//     if(!token){
+//         logger.error({ "url": req.originalUrl, "r": "auth", "msg": "token_not_found" });
+//         return sendError(res,"Access without token is not authorised","invalid_tokn",constants.BAD_REQUEST);
+//     }
+//     if(token==5 || token == '5'){
+//         next();
+//     }
        
-})
+// })
 
 
 /*===================routes for login ================================ */
