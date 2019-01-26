@@ -40,6 +40,12 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
         controller:'MainController',
         controllerAs: 'vm'
     })
+    .state('patient_dashboard.askQues',{
+        url:'/ask_ques',
+        templateUrl:'views/patient/admin/ask.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
     .state('doctor_login',{
         url:'/doctor_login',
         templateUrl:'views/doctor/login.html',
@@ -85,6 +91,36 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
     .state('clinic_signup',{
         url:'/clinic_signup',
         templateUrl:'views/clinic/signup.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('clinic_dashboard',{
+        url:'/clinic_dashboard',
+        templateUrl:'views/clinic/dashboard.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('clinic_dashboard.patient',{
+        url:'/patients',
+        templateUrl:'views/clinic/admin/patients.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('clinic_dashboard.dashboard',{
+        url:'/dashboard',
+        templateUrl:'views/clinic/admin/dashboard.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('clinic_dashboard.addDetails',{
+        url:'/add_details',
+        templateUrl:'views/clinic/admin/addDetail.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
+    .state('clinic_dashboard.recentStudy',{
+        url:'/recent-study',
+        templateUrl:'views/clinic/admin/recentStudy.html',
         controller:'MainController',
         controllerAs: 'vm'
     })

@@ -1,0 +1,135 @@
+<div class="row">
+    <div class="col-md-6">
+        <form name="form">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Search Doctor by specilisation</label>
+                <select class="form-control1" ng-model="vm.form['spec']" ng-init="vm.form['spec']='spec'">
+                    <option value="spec">Specilist</option>
+                    <option value="physician">Physician</option>
+                    <option value="dental">Dental</option>
+                </select>
+            </div> 
+            <button type="button" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="row" style="margin-top:5%">
+    <div class="col-12">
+        <div class="card"> 
+            <div class="card-body">
+                <div class="card-title mb-4">
+                    <div class="d-flex justify-content-start">
+                        <div class="image-container">
+                            <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px"
+                                class="img-thumbnail" />
+                        </div>
+                        <div class="userData ml-3">
+                            <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">
+                                    {{patientDetail['patient']['first_name']}}</a></h2>
+                            <!-- <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Video Uploads</h6>
+                            <h6 class="d-block"><a href="javascript:void(0)">300</a> Blog Posts</h6> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab"
+                                    aria-controls="basicInfo" aria-selected="true" target="_self">Doctor Info</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices"
+                                    role="tab" aria-controls="connectedServices" aria-selected="false" target="_self">Ask
+                                    Questions</a>
+                            </li>
+                        
+                        </ul>
+                        <div class="tab-content ml-1" id="myTabContent">
+                            <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        <label style="font-weight:bold;">Full Name</label>
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        {{patientDetail['patient']['first_name']}} {{patientDetail['patient']['last_name']}}
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        <label style="font-weight:bold;">Age</label>
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        18
+                                    </div>
+                                </div>
+                                <hr />
+
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        <label style="font-weight:bold;">Address</label>
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                            {{patientDetail['patient']['address']}}
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        <label style="font-weight:bold;">Sex</label>
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                            {{patientDetail['patient']['sex']}}
+                                    </div>
+                                </div>
+                                <hr />
+                                <p style="color:red;font-weight:bold">Emergency details--></p>
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        <label style="font-weight:bold;">Relative name</label>
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        {{patientDetail['patient']['par_name']}}
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        <label style="font-weight:bold;">Relative contact</label>
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        {{patientDetail['patient']['par_mob']}}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="connectedServices-tab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form name="form">
+                                            <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">Questions</label>
+                                                <textarea class="form-control"  rows="3" ng-required="true" ng-model="vm.form['question']"></textarea>
+                                            </div>
+                                           
+                                            <button type="button" class="btn btn-primary" ng-click="medicineSubmit(vm.form,patientDetail[0]['_id'])" ng-disabled="form.$invalid">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

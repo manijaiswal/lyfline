@@ -188,3 +188,7 @@
 [2019-01-26T01:00:59.986] [ERROR] Account - { r: 'login',
   method: 'post',
   msg: 'Password not match with this number' }
+[2019-01-26T03:33:24.309] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-01-26T03:34:34.555] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }

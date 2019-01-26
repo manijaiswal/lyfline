@@ -155,13 +155,13 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
             $scope.bg_disable = false;
             $scope.loaded = true;
             
-            if(role==1){
+            if(role==1 || role=='1'){
                 $location.path('/doctor_dashboard')
             }
-            else if(role==2){
+            else if(role==2 || role=='2'){
                 $location.path('/patient_dashboard');
             }
-            else if(role==3){
+            else if(role==3 || role=='3'){
                 $location.path('/clinic_dashboard');
             }
 
@@ -218,7 +218,7 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
         $scope.bg_disable = true;
         $scope.loaded     = false
 
-        data['doctorId'] = ipCookie('aid');
+        // data['doctorId'] = ipCookie('aid');
         ApiFactory.save('POST',RESOURCE_URL+'/doctors/patient_dtl',data)
         .then((res)=>{
             console.log(res)
@@ -325,6 +325,55 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
             console.log("err",e);
         }) 
     }
+
+
+    $scope.reportSubmit = function(data,patientId){
+        
+        $scope.bg_disable = true;
+        $scope.loaded     = false
+        data['clinicId'] = ipCookie('aid');
+        data['patientId'] = patientId;
+        console.log(data);
+
+        ApiFactory.save('POST',RESOURCE_URL+'/doctors/cr_report',data)
+        .then((res)=>{
+            console.log(res)
+
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            alert("successfully created medicine");
+
+        })
+        .catch((e)=>{
+            alert(e['message']);
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            console.log("err",e);
+        }) 
+    }
+
+
+
+    $scope.totalReports= function(){
+        console.log(data);
+        var data ={};
+        $scope.bg_disable = true;
+        $scope.loaded     = false
+        data['clinicId'] = ipCookie('aid');
+        ApiFactory.save('POST',RESOURCE_URL+'/doctors/totalReport_dtl',data)
+        .then((res)=>{
+            console.log(res)
+            $scope.totalPatient = res['data']
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+        })
+        .catch((e)=>{
+            alert(e['message']);
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            console.log("err",e);
+        }) 
+    }
     
     $scope.init = function(){
         if($location.path()=='/doctor_dashboard/patients'){
@@ -335,9 +384,15 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
             $scope.totalHistory()
         }
 
+        if($location.path()=='/clinic_dashboard/patients'){
+            $scope.totalReports()
+        }
+
     }
 
     $scope.init();
+
+ 
     
 }])
 

@@ -3,3 +3,22 @@
   msg: 'Invalid Parameters',
   p: { patientId: 'VjX5DLQcP', doctorId: '5c49f342659d762f28c8792b' } }
 [2019-01-26T01:45:42.269] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
+[2019-01-26T04:40:53.577] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
+[2019-01-26T04:46:15.856] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
+[2019-01-26T04:46:15.871] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
+[2019-01-26T06:34:54.464] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { patientId: '',
+     disease: 'Fever',
+     test: 'blood Test',
+     clinicId: '5c4b961f17f42e28f88ee455' } }
+[2019-01-26T06:44:45.073] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { patientId: '',
+     disease: 'fever',
+     test: 'blood',
+     clinicId: '5c4b961f17f42e28f88ee455' } }
