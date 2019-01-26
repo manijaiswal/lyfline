@@ -309,6 +309,7 @@ router.post('/cr_report',(req,res)=>{
         }
 
         var email = patient[0]['email']
+        var mobileno = patient[0]['mobile_no']
 
         var save_obj = {clinicId,patientId,disease,test,link}
 
@@ -329,7 +330,13 @@ router.post('/cr_report',(req,res)=>{
                     return sendSuccess(res,saveData); 
                 }
 
-                return sendSuccess(res,saveData);
+                sendSms(mobileno,91,function(err,data){
+                    if(err){
+                        return sendSuccess(res,saveData);
+                    }
+
+                    return sendSuccess(res,saveData);
+                })
             })
 
         })
