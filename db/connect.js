@@ -9,7 +9,7 @@ var logger              =   log4jsLogger.getLogger('DataBase');
 //'mongodb://localhost:27017/'+configs.DB_NAME
 
 //mongodb://<dbuser>:<dbpassword>@ds139645.mlab.com:39645/vizack
-//mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline
+//mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline 1898
 //'mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline'
 mongoose.connect('mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline',{useNewUrlParser: true },(err)=>{
     if(err){
