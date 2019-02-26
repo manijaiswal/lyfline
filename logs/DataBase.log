@@ -1003,3 +1003,15 @@
 [2019-01-26T12:46:47.848] [INFO] DataBase - { r: 'mongodb',
   msg: 'Database_successfully_connected',
   body: 'success' }
+[2019-02-20T22:40:25.064] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-02-20T22:44:16.122] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-02-20T23:04:13.351] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-02-27T00:20:29.136] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }

@@ -194,3 +194,12 @@
   msg: 'Password not match with this number' }
 [2019-01-26T10:54:08.565] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
 [2019-01-26T11:57:48.140] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-02-20T22:48:20.306] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-02-20T22:51:33.280] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-02-20T22:52:01.119] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-02-20T22:56:34.666] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { email: '', password: 'Nitp@123', role: '1' } }
+[2019-02-20T22:56:42.210] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-02-20T22:57:32.564] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }

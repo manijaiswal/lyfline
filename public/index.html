@@ -63,9 +63,8 @@
 </head>
 
 <body ng-app="app">
-   <div ng-include="'templates/header.html'" ng-if="isLogged()==false"></div>
-   <div ui-view></div>
+  <div ng-include="'templates/header.html'" ng-if="isLogged()==false"></div>
+  <div ui-view></div>
    <!-- you need to include the shieldui css and js assets in order for the charts to work -->
-
 </body>
 </html>

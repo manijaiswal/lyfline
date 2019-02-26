@@ -22,3 +22,5 @@
      disease: 'fever',
      test: 'blood',
      clinicId: '5c4b961f17f42e28f88ee455' } }
+[2019-02-20T23:00:20.844] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
+[2019-02-20T23:01:50.244] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
