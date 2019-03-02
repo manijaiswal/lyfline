@@ -569,7 +569,7 @@ router.post('/login_doc',(req,res)=>{
     //     return sendError(res,"phone Number is not valid","phone_no_invalid",constants.BAD_REQUEST);
     // }
 
-    Doctor.find({email,role},function(err,profile_data){
+    Doctor.find({email,role,vrfy:true},function(err,profile_data){
         if(err){
             logger.error({"r":"login","method":'post',"msg":err});
             return sendError(res,err,"server_error",constants.SERVER_ERROR);
@@ -632,7 +632,7 @@ router.post('/login_pat',(req,res)=>{
     //     return sendError(res,"phone Number is not valid","phone_no_invalid",constants.BAD_REQUEST);
     // }
 
-    Patient.find({email,role},function(err,profile_data){
+    Patient.find({email,role,vrfy:true},function(err,profile_data){
         if(err){
             logger.error({"r":"login","method":'post',"msg":err});
             return sendError(res,err,"server_error",constants.SERVER_ERROR);
@@ -695,7 +695,7 @@ router.post('/login_cli',(req,res)=>{
     //     return sendError(res,"phone Number is not valid","phone_no_invalid",constants.BAD_REQUEST);
     // }
 
-    Clinic.find({email,role},function(err,profile_data){
+    Clinic.find({email,role,vrfy:true},function(err,profile_data){
         if(err){
             logger.error({"r":"login","method":'post',"msg":err});
             return sendError(res,err,"server_error",constants.SERVER_ERROR);
