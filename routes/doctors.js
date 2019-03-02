@@ -421,6 +421,28 @@ router.post('/tot_doc',(req,res)=>{
 })
 
 
+router.post('/rd_patient_pro',(req,res)=>{
+    req.checkBody("aid",errorCodes.invalid_parameters[1]).isValidMongoId();
+
+    if(req.validationErrors()){
+        logger.error({"r":"cr_acc","method":"post","msg":errorCodes.invalid_parameters[1],"p":req.body});
+        return sendError(res,req.validationErrors(),'invalid_parameters',constants.BAD_REQUEST);
+    }
+
+    var aid = req.body.aid;
+
+    Patient.find({_id:aid},function(err,profile){
+        if(err){
+            logger.error({"r":"cr_acc","method":'post',"msg":err});
+            return sendError(res,err,"server_error",constants.SERVER_ERROR);
+        }
+
+        return sendSuccess(res,profile);
+    })
+
+})
+
+
 
 module.exports = router;
 

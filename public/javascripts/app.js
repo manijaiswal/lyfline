@@ -39,6 +39,12 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
         controller:'MainController',
         controllerAs: 'vm'
     })
+    .state('patient_dashboard.profile',{
+        url:'/patient_profile',
+        templateUrl:'views/patient/admin/profile.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
     .state('patient_dashboard.addNew',{
         url:'/add_new',
         templateUrl:'views/patient/admin/addNew.html',

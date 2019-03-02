@@ -395,6 +395,26 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
             console.log("err",e);
         })
     }
+
+    $scope.patientProfile = function(){
+        $scope.bg_disable = true;
+        $scope.loaded     = false
+        var data = {};
+        data['aid'] = ipCookie('aid');
+        ApiFactory.save('POST',RESOURCE_URL+'/doctors/rd_patient_pro',data)
+        .then((res)=>{
+            console.log(res)
+            $scope.patientProfile =  res['data'][0];
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+        })
+        .catch((e)=>{
+            alert(e['message']);
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            console.log("err",e);
+        })
+    }
     $scope.init = function(){
         if($location.path()=='/doctor_dashboard/patients'){
             $scope.totalPatients()
@@ -410,6 +430,10 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
 
         if($location.path()=='/search'){
             $scope.totalDoctors();
+        }
+
+        if($location.path()=='/patient_dashboard/patient_profile'){
+            $scope.patientProfile();
         }
 
     }
