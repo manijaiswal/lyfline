@@ -75,3 +75,28 @@ exports.sendMedicine = function(data,to,cb){
     })
 
 }
+
+exports.sendContactInfo = function(data,to,cb){
+
+    const mailOptions = {
+        from: 'eduvysupervision@gmail.com', // sender address
+        to: to, // list of receivers  id 15082829077-c27hlmg5rt0o821nk9l7no8763j72d0f.apps.googleusercontent.com
+        subject: "Sending medicine", // Subject lin       seceret  9tuDKQHbnPZrzMkwXsaOu_zl
+        template: 'contactInfo',
+        context: {
+            cont_info:data
+        }   
+    };
+
+    transporter.sendMail(mailOptions,function(err,info){
+        if(err){
+            return cb(err,null);
+        }
+
+        console.log(info)
+
+        return cb(null,info);
+    })
+
+}
+

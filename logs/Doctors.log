@@ -24,3 +24,71 @@
      clinicId: '5c4b961f17f42e28f88ee455' } }
 [2019-02-20T23:00:20.844] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
 [2019-02-20T23:01:50.244] [ERROR] Doctors - { r: 'cr_acc', method: 'post', msg: 'Account doesnot exists' }
+[2019-03-03T16:42:13.060] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 
+   { Error: No recipients defined
+       at SMTPConnection._formatError (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:774:19)
+       at SMTPConnection._setEnvelope (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:986:34)
+       at SMTPConnection.send (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:612:14)
+       at sendMessage (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-transport/index.js:227:28)
+       at connection.login.err (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-transport/index.js:285:25)
+       at SMTPConnection._actionAUTHComplete (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:1523:9)
+       at SMTPConnection._responseActions.push.str (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:547:26)
+       at SMTPConnection._processResponse (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:933:20)
+       at SMTPConnection._onData (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:739:14)
+       at TLSSocket._socket.on.chunk (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:691:47)
+       at emitOne (events.js:96:13)
+       at TLSSocket.emit (events.js:188:7)
+       at readableAddChunk (_stream_readable.js:176:18)
+       at TLSSocket.Readable.push (_stream_readable.js:134:10)
+       at TLSWrap.onread (net.js:559:20) code: 'EENVELOPE', command: 'API' } }
+[2019-03-03T16:48:18.164] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'Manish', email: '', mobile: 'ssd', subject: '', desc: '' } }
+[2019-03-03T16:51:05.083] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'ssss', email: '', mobile: 'sssss', subject: '', desc: '' } }
+[2019-03-03T16:56:54.488] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'ssss', email: '', mobile: 'sssss', subject: '', desc: '' } }
+[2019-03-03T16:57:25.048] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { name: 'ssssss',
+     email: '',
+     mobile: 'sssss',
+     subject: '',
+     desc: '' } }
+[2019-03-03T16:57:59.216] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'sss', email: '', mobile: 'sss', subject: '', desc: '' } }
+[2019-03-03T16:58:32.757] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'aaaaaa', email: '', mobile: '', subject: '', desc: '' } }
+[2019-03-03T17:01:20.416] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'aaaaaa', email: '', mobile: '', subject: '', desc: '' } }
+[2019-03-03T17:05:47.603] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'Manishs', email: '', mobile: '', subject: '', desc: '' } }
+[2019-03-03T17:06:14.972] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'sssssss', email: '', mobile: '', subject: '', desc: '' } }
+[2019-03-03T17:06:57.956] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'cccc', email: '', mobile: '', subject: '', desc: '' } }
+[2019-03-03T17:07:05.178] [ERROR] Doctors - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: { name: 'cccc', email: '', mobile: '', subject: '', desc: '' } }

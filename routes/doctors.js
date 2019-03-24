@@ -12,8 +12,8 @@ var AuthModule   = require('../utility/auth/auth_token');
 var otp_generator = require('../utility/code_generator');
 var phoneValidator = require('../utility/phoneNumber/phone_no_validator');
 var {sendOtpMail} = require("../mail-gun/sendMail"); 
-var {sendMedicine} = require("../mail-gun/sendMail");
-var {sendSms}     =  require('../sms/smsConfig'); 
+var {sendMedicine,sendContactInfo} = require("../mail-gun/sendMail");
+var {sendSms,sendContact}     =  require('../sms/smsConfig'); 
 
 require('../models/accounts');
 require('../models/accounts/doctors');
@@ -440,9 +440,51 @@ router.post('/rd_patient_pro',(req,res)=>{
         return sendSuccess(res,profile);
     })
 
+});
+
+
+/*=====================routes for send contact information to SAmart user ===================*/
+router.post('/sendMailAndMsg',(req,res)=>{
+    req.checkBody("name",errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody("mobile",errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody("email",errorCodes.invalid_parameters[1]).isValidEmail();
+    req.checkBody("subject",errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody("desc",errorCodes.invalid_parameters[1]).optional();
+
+    if(req.validationErrors()){
+        logger.error({"r":"cr_acc","method":"post","msg":errorCodes.invalid_parameters[1],"p":req.body});
+        return sendError(res,req.validationErrors(),'invalid_parameters',constants.BAD_REQUEST);
+    }
+
+    var name   = req.body.name;
+    var mobile = req.body.mobile;
+    var email  = req.body.email;
+    var subject = req.body.subject;
+    var save_obj = {name,mobile,email,subject};
+
+    if("desc" in req.body){
+        save_obj['desc'] = req.body.desc;
+    }
+
+    var arr = [];
+    arr.push(save_obj);
+
+    console.log(save_obj);
+    sendContactInfo(arr,'mk6598951@gmail.com',function(err,emailSentSuccess){
+        if(err){
+            logger.error({"r":"cr_acc","method":'post',"msg":err});
+            return sendError(res,err,"server_error",constants.SERVER_ERROR);
+        }
+
+        sendContact(7004324388,91,save_obj,function(err,success){
+            if(err){
+                logger.error({"r":"cr_acc","method":'post',"msg":err});
+                return sendError(res,err,"server_error",constants.SERVER_ERROR);
+            }
+            return sendSuccess(res,emailSentSuccess);
+        })   
+    })  
 })
-
-
 
 module.exports = router;
 
