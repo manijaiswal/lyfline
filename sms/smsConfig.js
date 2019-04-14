@@ -6,7 +6,7 @@ var options = {
     "port": null,
     "path": "http://api.msg91.com/api/v2/sendsms",
     "headers": {
-      "authkey": "234710Az7RWMuUS5b87f8f5",
+      "authkey": "",
       "content-type": "application/json"
     }
 };
