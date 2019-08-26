@@ -16,5 +16,6 @@ mongoose.connect('mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline',{us
         logger.error({"r":"mongodb","msg":"mongodb_connection_error","body":err});
         return;
     }
+    console.log("connected");
     logger.info({"r":"mongodb","msg":"Database_successfully_connected","body":"success"});
 });

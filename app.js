@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var accounts    = require('./routes/accounts');
 var adminPanels = require('./routes/adminPanels');
 var doctors     = require('./routes/doctors');
+var dry         = require('./routes/dryCleaning');
 
 var app = express();
 app.set('views', path.join(__dirname, 'views'));
@@ -66,5 +67,6 @@ app.use('/users', usersRouter);
 app.use('/accounts',accounts);
 app.use('/adminPanels',adminPanels);
 app.use('/doctors',doctors);
+app.use('/dry',dry);
 
 module.exports = app;
