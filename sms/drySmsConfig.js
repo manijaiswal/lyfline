@@ -31,7 +31,7 @@ exports.bookingMsgToAdmin  = function(msg,cb){
         route: '1',
         country: '91',
         sms: 
-        [{ message: msg_str, to: ['7004324388'] }] }));
+        [{ message: msg_str, to: ['7737777698'] }] }));
     req.end();
 }
 

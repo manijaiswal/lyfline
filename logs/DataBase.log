@@ -1099,3 +1099,9 @@
 [2019-08-27T00:23:59.584] [INFO] DataBase - { r: 'mongodb',
   msg: 'Database_successfully_connected',
   body: 'success' }
+[2019-08-27T13:04:41.900] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
+[2019-08-27T13:05:54.374] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
