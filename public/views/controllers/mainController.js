@@ -452,6 +452,7 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
         .then((res)=>{
             console.log(res)
             $scope.notifications =  res['data']['history'];
+            $scope.pro =  res['data']['profile'];
             $scope.bg_disable = false;
             $scope.loaded = true;
         })
