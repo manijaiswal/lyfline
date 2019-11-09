@@ -13,7 +13,8 @@ var options = {
 
 
 exports.bookingMsgToAdmin  = function(msg,cb){
-    var msg_str =  msg.name+"whose mobile"+msg.mobile_no+"wants to contact you regarding"+msg.services+"."+msg.desc;
+    console.log(msg);
+    var msg_str =  msg.name+"whose mobile is "+msg.mobile+"wants to contact you regarding "+msg.services+".  "+msg.desc;
     var req = http.request(options, function (res) {
         var chunks = [];
       
@@ -31,7 +32,7 @@ exports.bookingMsgToAdmin  = function(msg,cb){
         route: '1',
         country: '91',
         sms: 
-        [{ message: msg_str, to: ['7737777698'] }] }));
+        [{ message: msg_str, to: ['7060194894'] }] }));
     req.end();
 }
 

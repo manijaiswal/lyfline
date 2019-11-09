@@ -2,6 +2,7 @@ var express   = require('express');
 var mongoose  = require('mongoose');
 var jwt       = require('jsonwebtoken');
 const shortid = require('shortid');
+var moment    = require('moment');
 
 var log4jsLogger = require('../loggers/log4js_module');
 var helper       = require('../utility/helpers');
@@ -485,6 +486,43 @@ router.post('/sendMailAndMsg',(req,res)=>{
         })   
     })  
 })
+
+
+router.post('/get_patient_notifi',(req,res)=>{
+    req.checkBody("patientId",errorCodes.invalid_parameters[1]).isValidMongoId();
+
+    if(req.validationErrors()){
+        logger.error({"r":"cr_acc","method":"post","msg":errorCodes.invalid_parameters[1],"p":req.body});
+        return sendError(res,req.validationErrors(),'invalid_parameters',constants.BAD_REQUEST);
+    }
+
+   
+    var patientId = req.body.patientId;
+    var data = {};
+    Patient.find({_id:patientId},function(err,patient){
+        if(err){
+            logger.error({"r":"cr_acc","method":'post',"msg":err});
+            return sendError(res,err,"server_error",constants.SERVER_ERROR);
+        }
+
+        if(patient.length==0){
+            logger.error({"r":"cr_acc","method":"post","msg":"Account doesnot exists"});
+            return sendError(res,"Account doesnot exists","account_not_exists",constants.BAD_REQUEST); 
+        }
+
+        data['profile'] = patient[0];
+        var patientId =  patient[0]['_id'];
+        
+        Diease.find({patientId,createdAt:{$gte:new Date(moment().subtract(3,'days').toISOString()),$lt:new Date()}},function(err,diseaseData){
+            if(err){
+                logger.error({"r":"cr_acc","method":'post',"msg":err});
+                return sendError(res,err,"server_error",constants.SERVER_ERROR);
+            }
+            data['history'] = diseaseData
+            return sendSuccess(res,data);
+        }) 
+    })    
+});
 
 module.exports = router;
 

@@ -93,6 +93,12 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
         controller:'MainController',
         controllerAs: 'vm'
     })
+    .state('doctor_dashboard.profile',{
+        url:'/doctor_profile',
+        templateUrl:'views/doctor/admin/profile.html',
+        controller:'MainController',
+        controllerAs: 'vm'
+    })
     .state('clinic_login',{
         url:'/clinic_login',
         templateUrl:'views/clinic/login.html',

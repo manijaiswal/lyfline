@@ -20,8 +20,6 @@ require('../models/accounts/patients');
 require('../models/accounts/clinics');
 
 
-
-
 var Account      = mongoose.model('Account');
 var Doctor       = mongoose.model('Doctor');
 var EmailOtp     = mongoose.model('EmailOtp');
@@ -363,6 +361,92 @@ router.post('/verify_email_pat', (req, res) => {
     })
 });
 
+router.post('/cr_acc_pat2',(req,res)=>{
+    req.checkBody('ccode',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('mobile_no',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('email',errorCodes.invalid_parameters[1]).optional().isValidEmail();
+    req.checkBody('first_name',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('last_name',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('sex',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('role',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('password',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('dob',errorCodes.invalid_parameters[1]).optional();
+
+
+    if(req.validationErrors()){
+        logger.error({"r":"cr_acc","method":"post","msg":errorCodes.invalid_parameters[1],"p":req.body});
+        return sendError(res,req.validationErrors(),'invalid_parameters',constants.BAD_REQUEST);
+    }
+
+    var ccode     = req.body.ccode;
+    var mobile_no = req.body.mobile_no;
+    var email     = req.body.email;
+    var first_name= req.body.first_name;
+    var last_name = req.body.last_name;
+    var sex       = req.body.sex; 
+    var role      = req.body.role;
+    var vrfy      = false;
+    var password  = req.body.password;
+
+    var phoneValidationStatus = phoneValidator(mobile_no,ccode);
+
+    if(!phoneValidationStatus){
+        logger.error({"r":"cr_acc","method":"post","msg":"phone Number invalid"});
+        return sendError(res,"phone Number is not valid","phone_no_invalid",constants.BAD_REQUEST);
+    }
+
+    if(password.length<6){
+        logger.error({"r":"cr_acc","method":"post","msg":"password length should be greater than 6"});
+        return sendError(res,"password length should be greater than 6","password_length",constants.BAD_REQUEST);
+    }
+
+    var data = {};
+    Patient.find({mobile_no,email,vrfy:true},function(err,profile_data){
+        if(err){
+            logger.error({"r":"cr_acc","method":'post',"msg":err});
+            return sendError(res,err,"server_error",constants.SERVER_ERROR);
+        }
+
+        if(profile_data.length>0){
+            logger.error({"r":"cr_acc","method":"post","msg":"Account already exists"});
+            return sendError(res,"Account already exists","account_already_exists",constants.BAD_REQUEST); 
+        }
+
+        if(profile_data.length==0){
+
+            vrfy = false;
+            var vrfy_at = new Date();
+            
+            var saveObj = {ccode,mobile_no,email,first_name,last_name,sex,vrfy,vrfy_at,role,password,address,mart_sts,par_name,par_sex,par_mob,par_rel};
+
+            if("dob" in req.body){
+                saveObj['dob'] = req.body.dob;
+            }
+
+            var account = new Patient(saveObj);
+
+            account.save(function(err,account_save){
+                if(err){
+                    logger.error({"r":"cr_acc","method":'post',"msg":err});
+                    return sendError(res,err,"server_error",constants.SERVER_ERROR);
+                }
+
+                var aid  = account_save['_id'];
+                generateEmailCode(aid,email,function(err,genereted_otp){
+                    if(err){
+                        logger.error({ "r": "cr_acc", "method": 'post', "msg": err });
+                        return sendError(res, err, "email_not_sent", constants.SERVER_ERROR);
+                    }
+                    return sendSuccess(res,account_save);
+
+                })
+            })
+
+        }
+    })
+
+})
+
 
 
 
@@ -377,14 +461,14 @@ router.post('/cr_acc_cli',(req,res)=>{
     req.checkBody('sex',errorCodes.invalid_parameters[1]).notEmpty();
     req.checkBody('role',errorCodes.invalid_parameters[1]).notEmpty();
     req.checkBody('password',errorCodes.invalid_parameters[1]).notEmpty();
-    req.checkBody('address',errorCodes.invalid_parameters[1]).notEmpty();
-    req.checkBody('city',errorCodes.invalid_parameters[1]).notEmpty();
-    req.checkBody('state',errorCodes.invalid_parameters[1]).notEmpty();
-    req.checkBody('distric',errorCodes.invalid_parameters[1]).notEmpty();
-    req.checkBody('pin_code',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('address',errorCodes.invalid_parameters[1]).optional();
+    req.checkBody('city',errorCodes.invalid_parameters[1]).optional();
+    req.checkBody('state',errorCodes.invalid_parameters[1]).optional();
+    req.checkBody('distric',errorCodes.invalid_parameters[1]).optional();
+    req.checkBody('pin_code',errorCodes.invalid_parameters[1]).optional();
     req.checkBody('hospital_name',errorCodes.invalid_parameters[1]).notEmpty();
     req.checkBody('hospital_type',errorCodes.invalid_parameters[1]).notEmpty();
-    req.checkBody('test_done',errorCodes.invalid_parameters[1]).notEmpty();
+    req.checkBody('test_done',errorCodes.invalid_parameters[1]).optional();
     
 
     if(req.validationErrors()){
@@ -401,14 +485,8 @@ router.post('/cr_acc_cli',(req,res)=>{
     var role      = req.body.role;
     var vrfy      = false;
     var password  = req.body.password;
-    var address   = req.body.address;
-    var city      = req.body.city;
-    var state     = req.body.state;
-    var distric   = req.body.distric;
-    var pin_code  = req.body.pin_code;
     var hospital_name = req.body.hospital_name;
     var hospital_type = req.body.hospital_type;
-    var test_done   =  req.body.test_done;
 
     var phoneValidationStatus = phoneValidator(mobile_no,ccode);
 
@@ -421,9 +499,6 @@ router.post('/cr_acc_cli',(req,res)=>{
         logger.error({"r":"cr_acc","method":"post","msg":"password length should be greater than 6"});
         return sendError(res,"password length should be greater than 6","password_length",constants.BAD_REQUEST);
     }
-
-    var data = {};
-
 
     Clinic.find({mobile_no,email,vrfy:true},function(err,profile_data){
         if(err){
@@ -441,7 +516,26 @@ router.post('/cr_acc_cli',(req,res)=>{
             vrfy = false;
             var vrfy_at = new Date();
 
-            var saveObj = {ccode,mobile_no,email,first_name,last_name,sex,vrfy,vrfy_at,role,password,address,city,distric,state,pin_code,hospital_name,hospital_type,test_done};
+            var saveObj = {ccode,mobile_no,email,first_name,last_name,sex,vrfy,vrfy_at,role,password,hospital_name,hospital_type};
+
+            if("address" in req.body){
+                saveObj['address'] = req.body.address;
+            }
+            if("state" in req.body){
+                saveObj['state'] = req.body.state;
+            }
+            if("city" in req.body){
+                saveObj['city'] = req.body.city;
+            }
+            if("distric" in req.body){
+                saveObj['distric'] = req.body.distric;
+            }
+            if("pin_code" in req.body){
+                saveObj['pin_code'] = req.body.pin_code;
+            }
+            if("address" in req.body){
+                saveObj['test_done'] = req.body.test_done;
+            }
 
             var account = new Clinic(saveObj);
 

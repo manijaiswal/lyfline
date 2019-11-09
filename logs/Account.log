@@ -203,3 +203,99 @@
   p: { email: '', password: 'Nitp@123', role: '1' } }
 [2019-02-20T22:56:42.210] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
 [2019-02-20T22:57:32.564] [ERROR] Account - { r: 'login', method: 'post', msg: 'Account doesnot exists' }
+[2019-11-07T21:59:27.326] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2019-11-07T21:59:35.050] [ERROR] Account - { r: 'login',
+  method: 'post',
+  msg: 'Password not match with this number' }
+[2019-11-07T23:04:12.502] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { sex: 'sex',
+     hospital_type: 'hospital_type',
+     state: 'state',
+     role: '3',
+     ccode: '91' } }
+[2019-11-07T23:14:46.394] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { sex: 'Male',
+     hospital_type: 'Gov',
+     state: 'state',
+     first_name: 'Manish',
+     email: 'mkkkdkjd@gmail.com',
+     mobile_no: '7004324388',
+     hospital_name: 'amnsisu',
+     address: 'xxx',
+     role: '3',
+     ccode: '91' } }
+[2019-11-07T23:17:46.203] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { sex: 'Male',
+     hospital_type: 'hospital_type',
+     state: 'state',
+     email: 'mk6598951@gmail.com',
+     password: 'Nitp@123',
+     first_name: 'Manish',
+     last_name: 'Kumar',
+     role: '3',
+     ccode: '91' } }
+[2019-11-07T23:20:12.296] [ERROR] Account - { r: 'send_email',
+  method: 'post',
+  msg: { Error: Missing credentials for "PLAIN"
+    at SMTPConnection._formatError (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:774:19)
+    at SMTPConnection.login (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:445:38)
+    at connection.connect (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-transport/index.js:271:32)
+    at SMTPConnection.once (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:200:17)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:106:13)
+    at SMTPConnection.emit (events.js:208:7)
+    at SMTPConnection._actionEHLO (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:1302:14)
+    at SMTPConnection._processResponse (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:933:20)
+    at SMTPConnection._onData (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:739:14)
+    at TLSSocket._socket.on.chunk (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:691:47)
+    at emitOne (events.js:116:13)
+    at TLSSocket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at TLSSocket.Readable.push (_stream_readable.js:208:10) code: 'EAUTH', command: 'API' } }
+[2019-11-07T23:51:19.183] [ERROR] Account - { r: 'cr_acc',
+  method: 'post',
+  msg: 'Invalid Parameters',
+  p: 
+   { sex: 'Male',
+     hospital_type: 'Gov',
+     state: 'state',
+     email: 'mk6598951@gmail.com',
+     password: 'Nitp@123',
+     first_name: 'Mansih',
+     last_name: 'Kumar',
+     hospital_name: 'Manish',
+     role: '3',
+     ccode: '91' } }
+[2019-11-07T23:51:39.109] [ERROR] Account - { r: 'send_email',
+  method: 'post',
+  msg: 
+   { Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials o7sm5745785pjo.7 - gsmtp
+    at SMTPConnection._formatError (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:774:19)
+    at SMTPConnection._actionAUTHComplete (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:1509:34)
+    at SMTPConnection._responseActions.push.str (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:547:26)
+    at SMTPConnection._processResponse (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:933:20)
+    at SMTPConnection._onData (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:739:14)
+    at TLSSocket._socket.on.chunk (/home/manish/Documents/vizack-server/node_modules/nodemailer/lib/smtp-connection/index.js:691:47)
+    at emitOne (events.js:116:13)
+    at TLSSocket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at TLSSocket.Readable.push (_stream_readable.js:208:10)
+    at TLSWrap.onread (net.js:601:20)
+     code: 'EAUTH',
+     response: '535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials o7sm5745785pjo.7 - gsmtp',
+     responseCode: 535,
+     command: 'AUTH PLAIN' } }

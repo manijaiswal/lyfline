@@ -2,42 +2,45 @@
     <h1>Clinic Registration Form </h1>
     <div class="register-form-w3layouts">
         <!-- Form starts here -->
-        <form>
+        <form name="form"> 
             <h3 class="sub-heading-agileits">Clinic Owner Details</h3>
             <div class="main-flex-w3ls-sectns">
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="text" name="Name" placeholder="First Name" required="">
+                    <input type="text" name="Name" placeholder="First Name"  ng-model="vm.form['first_name']">
                 </div>
                 <div class="field-agileinfo-spc form-w3-agile-text2">
-                    <input type="text" name="Name" placeholder="Last Name" required="">
+                    <input type="text" name="Name" placeholder="Last Name" ng-model="vm.form['last_name']">
                 </div>
             </div>
             <div class="main-flex-w3ls-sectns">
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="email" name="Email" placeholder="Email" required="">
+                    <input type="email" name="Email" placeholder="Email"  ng-model="vm.form['email']">
                 </div>
                 <div class="field-agileinfo-spc form-w3-agile-text2">
-                    <input type="text" name="Phone no" placeholder="Phone Number" required="">
+                    <input type="text" name="Phone no" placeholder="Phone Number" ng-model="vm.form['mobile_no']">
                 </div>
             </div>
             <div class="main-flex-w3ls-sectns">
                 <div class="field-agileinfo-spc form-w3-agile-text2">
-                    <select class="form-control">
-                        <option>Gender</option>
+                    <select class="form-control" ng-model="vm.form['sex']" ng-init="vm.form['sex']='sex'">
+                        <option value="sex">Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text2">
+                    <input type="password" name="Password" placeholder="Enter Password" ng-model="vm.form['password']">
                 </div>
             </div>
             <div class="clear"></div>
             <h2 class="sub-heading-agileits">Clinic Details</h2>
             <div class="main-flex-w3ls-sectns">
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="text" name="Clinic Name" placeholder="Hospital Name" required="">
+                    <input type="text" name="Clinic Name" placeholder="Hospital Name"  ng-model="vm.form['hospital_name']">
                 </div>
                 <div class="field-agileinfo-spc form-w3-agile-text2">
-                    <select class="form-control">
-                        <option>Clinic type</option>
+                    <select class="form-control" ng-model="vm.form['hospital_type']" ng-init="vm.form['hospital_type']='hospital_type'">
+                        <option value="hospital_type">Clinic type</option>
                         <option value="Gov">Government</option>
                         <option value="private">Private</option>
                         <option value="others">Others</option>
@@ -46,11 +49,11 @@
             </div>
             <div class="main-flex-w3ls-sectns">
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="text" name="Distric" placeholder="Distric" required="">
+                    <input type="text" name="Distric" placeholder="Distric"  ng-model="vm.form['distric']">
                 </div>
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <select class="form-control">
-                        <option>State</option>
+                    <select class="form-control" ng-model="vm.form['state']" ng-init="vm.form['state']='state'">
+                        <option value="state">State</option>
                         <option value="Single">Bihar</option>
                         <option value="Married">New Delhi</option>
                         <option value="Divorced">Assam</option>
@@ -59,20 +62,20 @@
             </div>
             <div class="main-flex-w3ls-sectns">
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="text" name="city" placeholder="city" required="">
+                    <input type="text" name="city" placeholder="city"  ng-model="vm.form['city']">
                 </div>
                 <div class="field-agileinfo-spc form-w3-agile-text1">
-                    <input type="text" name="pincode" placeholder="pincode" required="">
+                    <input type="text" name="pincode" placeholder="pincode"  ng-model="vm.form['pin_code']">
                 </div>
             </div>
             <div class="field-agileinfo-spc form-w3-agile-text">
-                <textarea name="Message" placeholder="Address..."></textarea>
+                <textarea name="Message" placeholder="Address..." ng-model="vm.form['address']"></textarea>
             </div>
-            <div class="field-agileinfo-spc form-w3-agile-text">
+            <div class="field-agileinfo-spc form-w3-agile-text" ng-model="vm.form['test_done']">
                     <textarea name="Message" placeholder="Testes will be done here please list it"></textarea>
             </div>
 
-            <input type="submit" value="Submit">
+            <input type="button" value="Submit" ng-click="clinicSubmit(vm.form)" ng-disabled="form.$invalid">
             <input type="reset" value="Clear Form">
 
             <div class="clear"></div>

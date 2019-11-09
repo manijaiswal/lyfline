@@ -9,7 +9,7 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
     vm.form               = {};
     $scope.bg_disable = false;
     $scope.loaded     = true;
-
+    
     $scope.create_agent_account  = function(){
         console.log(vm.sign_form);
         vm.sign_form['role'] = 2;
@@ -128,6 +128,34 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
         }) 
     }
 
+    $scope.clinicSubmit = function(data){
+        $scope.bg_disable = true;
+        $scope.loaded     = false
+
+        data['role'] = 3;
+        data['ccode'] = 91;
+        ApiFactory.save('POST',RESOURCE_URL+'/accounts/cr_acc_cli',data)
+        .then((res)=>{
+
+            var aid = res['data']['_id'];
+            var role = res['data']['role']
+            ipCookie('aid',aid);
+            ipCookie('role',role)
+            console.log(res)
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            alert('please check your mail and enter otp')
+            $location.path('/verify');
+
+        })
+        .catch((e)=>{
+            alert(e['message']);
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            console.log("err",e);
+        }) 
+    }
+
     $scope.loginForm = function(data){
         $scope.bg_disable = true;
         $scope.loaded     = false
@@ -178,16 +206,15 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
     }
 
     $scope.patientSubmit = function(data){
-        console.log(data)
         $scope.bg_disable = true;
         $scope.loaded     = false
 
         data['role'] = 2;
         data['ccode'] = 91;
+        console.log(data)
 
         ApiFactory.save('POST',RESOURCE_URL+'/accounts/cr_acc_pat',data)
         .then((res)=>{
-
             var aid = res['data']['_id'];
             ipCookie('aid',aid);
             ipCookie('role',res['data']['role']);
@@ -415,6 +442,26 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
             console.log("err",e);
         })
     }
+
+    $scope.getNotification = function(){
+        $scope.bg_disable = true;
+        $scope.loaded     = false
+        var data = {};
+        data['patientId'] = ipCookie('aid');
+        ApiFactory.save('POST',RESOURCE_URL+'/doctors/get_patient_notifi',data)
+        .then((res)=>{
+            console.log(res)
+            $scope.notifications =  res['data']['history'];
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+        })
+        .catch((e)=>{
+            alert(e['message']);
+            $scope.bg_disable = false;
+            $scope.loaded = true;
+            console.log("err",e);
+        })
+    }
     $scope.init = function(){
         if($location.path()=='/doctor_dashboard/patients'){
             $scope.totalPatients()
@@ -434,6 +481,9 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
 
         if($location.path()=='/patient_dashboard/patient_profile'){
             $scope.patientProfile();
+        }
+        if($location.path()=='/patient_dashboard'){
+            $scope.getNotification();
         }
 
     }

@@ -11,7 +11,7 @@ var logger              =   log4jsLogger.getLogger('DataBase');
 //mongodb://<dbuser>:<dbpassword>@ds139645.mlab.com:39645/vizack
 //mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline 1898
 //'mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline'
-mongoose.connect('mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline',{useNewUrlParser: true },(err)=>{
+mongoose.connect('mongodb://lyfline:Nitp123@ds213255.mlab.com:13255/lyfline',{useNewUrlParser: true, useUnifiedTopology: true },(err)=>{
     if(err){
         logger.error({"r":"mongodb","msg":"mongodb_connection_error","body":err});
         return;

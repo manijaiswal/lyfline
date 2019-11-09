@@ -95,7 +95,7 @@
         <li class="nav-item">
             <a class="nav-link" href="#!/patient_dashboard/add_new">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Add New</span></a>
+                <span>Add New Records</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#!/patient_dashboard/ask_ques">
@@ -113,10 +113,23 @@
                 <li class="breadcrumb-item">
                     <a href="#">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Overview</li>
+                <li class="breadcrumb-item active">Latest Notifications</li>
             </ol>
 
             <!-- Icon Cards-->
+
+            <div class="container jumbotron" style="margin-top:5%"  ng-if="loc== '/patient_dashboard'">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="alert alert-danger" role="alert" ng-if="notifications.length==0">
+                                No Recents Notifications
+                        </div>
+                        <div class="alert alert-danger" role="alert" ng-repeat="x in notifications track by $index">
+                            Doctor {{x.doctor}} has uploaded the medicines.
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- DataTables Example -->
 
