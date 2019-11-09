@@ -13,7 +13,6 @@
                         <th>Date</th>
                         <th>Status</th>
                         <th>problem</th>
-                        <th>Medicine</th>
                         <th>Test</th>
                         <th>Documents</th>
                     </tr>
@@ -34,7 +33,7 @@
                         <td>{{(data['treat']['createdAt'] | date) || "01/01/2018"}}</td>
                         <td>{{data['treat']['status'] || "completed"}}</td>
                         <td>{{data['treat']['disease']}}</td>
-                        <td>{{data['treat']['medicine']}}</td>
+                        <!-- <td>{{data['treat']['medicine']}}</td> -->
                         <td>{{data['treat']['test']}}</td></td>
                         <td> <a href="https://drive.google.com/file/d/115eNQGsUXf6JAaGk93Jany0_Fv-V9_I4/view" target="_blank">Report link</a> </td>
                     </tr>

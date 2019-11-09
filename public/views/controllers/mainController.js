@@ -187,13 +187,13 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
             $scope.loaded = true;
             
             if(role==1 || role=='1'){
-                $location.path('/doctor_dashboard')
+                $location.path('/doctor_dashboard/patients')
             }
             else if(role==2 || role=='2'){
                 $location.path('/patient_dashboard');
             }
             else if(role==3 || role=='3'){
-                $location.path('/clinic_dashboard');
+                $location.path('/clinic_dashboard/patients');
             }
 
         })
@@ -493,6 +493,14 @@ MainController.controller('MainController',['$scope','$http','$location','ipCook
   
     $scope.data = [
       [25,20,55]
+    ];
+
+
+    $scope.labels1 = ['0.25', '0.5888', '0.14885','0.9889'];
+    $scope.series1 = ['Series A'];
+  
+    $scope.data1 = [
+      [5,10,15,20]
     ];
 
     $scope.init()    
