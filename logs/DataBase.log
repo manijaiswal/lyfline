@@ -1234,3 +1234,6 @@
 [2019-11-09T09:43:58.418] [INFO] DataBase - { r: 'mongodb',
   msg: 'Database_successfully_connected',
   body: 'success' }
+[2019-11-09T13:18:17.052] [INFO] DataBase - { r: 'mongodb',
+  msg: 'Database_successfully_connected',
+  body: 'success' }
